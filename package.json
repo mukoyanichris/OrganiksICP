@@ -14,12 +14,13 @@
     "start": "webpack serve --mode development --env development",
     "deploy:local": "dfx deploy --network=local",
     "deploy:ic": "dfx deploy --network=ic",
-    "generate": "dfx generate organiks_backend"
+    "generate": "./did.sh && dfx generate",
+    "gen-deploy": "./did.sh && dfx generate && dfx deploy -y"
   },
   "dependencies": {
-    "@dfinity/agent": "^1.0.1",
-    "@dfinity/candid": "^1.0.1",
-    "@dfinity/principal": "^1.0.1"
+    "@dfinity/agent": "^0.20.2",
+    "@dfinity/candid": "^0.20.2",
+    "@dfinity/principal": "^0.20.2"
   },
   "devDependencies": {
     "assert": "2.0.0",
@@ -37,7 +38,8 @@
     "webpack-dev-server": "^4.8.1"
   },
   "engines": {
-    "node": "^12 || ^14 || ^16 || ^18"
+    "node": "^12 || ^14 || ^16 || >=17",
+    "npm": "^7.17 || >=8"
   },
   "browserslist": [
     "last 2 chrome version",
