@@ -1,0 +1,30 @@
+{
+  "canisters": {
+    "organiks_backend": {
+      "candid": "src/organiks_backend/organiks_backend.did",
+      "package": "organiks_backend",
+      "type": "rust"
+    },
+    "organiks_frontend": {
+      "dependencies": [
+        "organiks_backend"
+      ],
+      "frontend": {
+        "entrypoint": "src/organiks_frontend/src/index.html"
+      },
+      "source": [
+        "src/organiks_frontend/assets",
+        "dist/organiks_frontend/"
+      ],
+      "type": "assets"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
